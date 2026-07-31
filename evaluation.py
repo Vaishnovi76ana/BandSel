@@ -160,7 +160,6 @@ if __name__ == "__main__":
     parser.add_argument("--model-path", type=str, default="/your_model_path/Qwen2.5-7B-Instruct")
     parser.add_argument("--tokenizer-path", type=str, default="/your_model_path/Qwen2.5-7B-Instruct")
     parser.add_argument("--adapter-path", type=str, default="/your_model_path/TokenSkip-Qwen2.5-7B-Instruct-GSM8K")
-    parser.add_argument("--model-size", type=str, choices=['3b', '7b', '8b', '13b', '14b', '33b', '34b', '70b'], default="7b")
     parser.add_argument("--model-type", type=str, choices=['llama3', 'qwen'], default="qwen")
     parser.add_argument("--use_adapter", action='store_true', default=False, help="whether to use LoRA")
     parser.add_argument("--compression_ratio", type=float, default=1.0, help="compression ratio for cot.")
@@ -177,8 +176,8 @@ if __name__ == "__main__":
 
     # os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 
-    if args.benchmark == 'math' and args.use_adapter:
-        args.max_new_tokens = args.max_new_tokens * args.compression_ratio
+    #if args.benchmark == 'math' and args.use_adapter:
+        #args.max_new_tokens = args.max_new_tokens * args.compression_ratio
 
     print(f"Evaluating {args.model_path}", flush=True)
     print(f"Max new tokens: {args.max_new_tokens}, eval batch size: {args.eval_batch_size}, temperature: {args.temperature}, seed: {args.seed}\n", flush=True)
@@ -186,9 +185,9 @@ if __name__ == "__main__":
         print(f"Adapter path {args.adapter_path}, compression ratio: {args.compression_ratio}", flush=True)
 
     if args.use_adapter:
-        args.output_dir = os.path.join(args.output_dir, f"{args.model_size}/", f"TokenSkip/", f"{args.compression_ratio}/")
+        args.output_dir = os.path.join(args.output_dir, f"TokenSkip/", f"{args.compression_ratio}/")
     else:
-        args.output_dir = os.path.join(args.output_dir, f"{args.model_size}/", f"Original/{args.data_type}/")
+        args.output_dir = os.path.join(args.output_dir, f"Original/{args.data_type}/")
 
     test_conf = read_data(f"configs/{args.benchmark}_{args.data_type}.json")
 
