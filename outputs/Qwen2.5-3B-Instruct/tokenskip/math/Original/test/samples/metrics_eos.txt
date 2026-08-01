@@ -1,0 +1,19 @@
+========================================
+      LIVE MONITORED SUMMARY        
+========================================
+Total Questions:    500
+Actual Accuracy:    58.60%
+Predictor Accuracy: 82.40%
+Avg Token Savings:  0.00%
+
+Confusion Matrix (Predictor vs Reality):
+            Reality: T    Reality: F
+Pred: T      274          69           (Success calls)
+Pred: F      39           118          (Failure calls)
+
+Avg Stop Token by Category:
+  TP (n=274): 446.9 tokens
+  TN (n=118): 512.4 tokens
+  FP (n=69): 552.6 tokens
+  FN (n=39): 583.2 tokens
+========================================
