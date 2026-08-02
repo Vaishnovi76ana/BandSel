@@ -20,7 +20,7 @@ def seed_everything(seed: int):
     os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
 
-def load_all_data(input_dir="outputs/Qwen2.5-7B-Instruct/gsm8k/7b/"):
+def load_all_data(input_dir="outputs/Qwen2.5-7B-Instruct/tokenskip/gsm8k/"):
     original_data = load_json(os.path.join(input_dir, "Original/train/samples/predictions_formatted.jsonl"))
     compressed_data_0 = load_json(os.path.join(input_dir, "Compression/train_outputs_compressed_ratio_0.9.jsonl"))
     compressed_data_1 = load_json(os.path.join(input_dir, "Compression/train_outputs_compressed_ratio_0.8.jsonl"))
@@ -39,6 +39,7 @@ def get_llamafactory_input():
         if data_index == 0:
             input_data = original_data[i]['messages'][0]['content']
             answer = original_data[i]['prediction']
+            answer = ", ".join(answer)
             cot = original_data[i]['model_output']
             output_data = f"{cot}\n\nThe final answer is: " + "$\\boxed{" + answer + "}$"
         else:
@@ -46,6 +47,7 @@ def get_llamafactory_input():
             compressed_data = compressed_data_list[data_index]
             input_data = f"{compressed_data[i]['question']}<|eot_id|>{compression_ratio}<|eot_id|>"
             answer = compressed_data[i]['model_answer']
+            answer = ", ".join(answer)
             cot = compressed_data[i]['compressed_cot']
             output_data = f"{cot}\n\nThe final answer is: " + "$\\boxed{" + answer + "}$"
 

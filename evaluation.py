@@ -185,7 +185,7 @@ if __name__ == "__main__":
         print(f"Adapter path {args.adapter_path}, compression ratio: {args.compression_ratio}", flush=True)
 
     if args.use_adapter:
-        args.output_dir = os.path.join(args.output_dir, f"TokenSkip/", f"{args.compression_ratio}/")
+        args.output_dir = os.path.join(args.output_dir, f"TokenSkip/{args.data_type}/", f"{args.compression_ratio}/")
     else:
         args.output_dir = os.path.join(args.output_dir, f"Original/{args.data_type}/")
 
