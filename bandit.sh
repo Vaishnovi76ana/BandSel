@@ -11,7 +11,7 @@ MODEL_TYPE="qwen"
 # ===========================
 # Dataset
 # ===========================
-BENCHMARK="math"          # gsm8k | math
+BENCHMARK="gsm8k"          # gsm8k | math
 # ===========================
 # Output
 # ===========================
@@ -21,7 +21,7 @@ OUTPUT_DIR="outputs/${MODEL_NAME}/bandit/${BENCHMARK}"
 # Evaluation
 # ===========================
 MAX_NUM_EXAMPLES=100000000000000
-MAX_NEW_TOKENS=1024
+MAX_NEW_TOKENS=512
 EVAL_BATCH_SIZE=32
 RANDOM_SEED=42
 
