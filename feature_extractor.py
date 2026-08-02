@@ -1,6 +1,6 @@
 
 """
-reasoning_feature_extractor_9features.py
+reasoning_feature_extractor_features.py
 
 Extracts:
 signal_ratio
@@ -110,7 +110,8 @@ class ReasoningFeatureExtractor:
 if __name__ == "__main__":
 
     model_name = "Qwen2.5-7B-Instruct"
-    with open(f"outputs/{model_name}/bandit/math/bandit_data.jsonl", "r", encoding="utf-8") as f:
+    benchmark = "gsm8k"
+    with open(f"outputs/{model_name}/bandit/{benchmark}/bandit_data.jsonl", "r", encoding="utf-8") as f:
         records = [json.loads(line) for line in f]
 
     traces = [
@@ -127,6 +128,6 @@ if __name__ == "__main__":
 
     features = extractor.extract(
         traces,
-        "reasoning_features.csv",
+        f"outputs/{model_name}/bandit/{benchmark}/reasoning_scores_subset.csv",
     )
 

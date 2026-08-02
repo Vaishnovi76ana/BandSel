@@ -1,12 +1,13 @@
 import json
 
 model_name = "Qwen2.5-7B-Instruct"
+benchmark = "gsm8k"
 
 files = [
-    (0.5, f"outputs/{model_name}/tokenskip/math/TokenSkip/train/0.5/samples/predictions.jsonl"),
-    (0.7, f"outputs/{model_name}/tokenskip/math/TokenSkip/train/0.7/samples/predictions.jsonl"),
-    (0.9, f"outputs/{model_name}/tokenskip/math/TokenSkip/train/0.9/samples/predictions.jsonl"),
-    (1.0, f"outputs/{model_name}/tokenskip/math/Original/train/samples/predictions.jsonl"),
+    (0.5, f"outputs/{model_name}/tokenskip/{benchmark}/TokenSkip/train/0.5/samples/predictions.jsonl"),
+    (0.7, f"outputs/{model_name}/tokenskip/{benchmark}/TokenSkip/train/0.7/samples/predictions.jsonl"),
+    (0.9, f"outputs/{model_name}/tokenskip/{benchmark}/TokenSkip/train/0.9/samples/predictions.jsonl"),
+    (1.0, f"outputs/{model_name}/tokenskip/{benchmark}/Original/train/samples/predictions.jsonl"),
 ]
 
 
@@ -33,7 +34,7 @@ for i in range(n):
             break
 
 # Write output as JSONL
-with open(f"outputs/{model_name}/bandit/math/bandit_data.jsonl", "w", encoding="utf-8") as f:
+with open(f"outputs/{model_name}/bandit/{benchmark}/bandit_data.jsonl", "w", encoding="utf-8") as f:
     for sample in output:
         f.write(json.dumps(sample, ensure_ascii=False) + "\n")
 
