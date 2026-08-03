@@ -1,8 +1,8 @@
 BENCHMARK="gsm8k" # "gsm8k", "math"
-OUPTUT_DIR="outputs/Qwen2.5-7B-Instruct/tokenskip/${BENCHMARK}/"
+OUPTUT_DIR="outputs/Qwen2.5-7B-Instruct/bandit/${BENCHMARK}/"
 MODEL_PATH="Qwen/Qwen2.5-7B-Instruct"
 MODEL_TYPE="qwen" # "llama3", "qwen"
-DATA_TYPE="train" # "train", "test"
+DATA_TYPE="test" # "train", "test"
 
 # Generation Settings
 MAX_NUM_EXAMPLES=100000000000000
@@ -12,9 +12,9 @@ TEMPERATURE=0.0
 SEED=42
 
 # TokenSkip Settings
-ADAPTER_PATH="model/GSM8K-Compressed-Qwen2.5-7B-Instruct"
-#ADAPTER_PATH="outputs/Qwen2.5-7B-Instruct/bandit/math/adapter_iter_30"
-COMPRESSION_RATIO=0.9
+#ADAPTER_PATH="model/GSM8K-Compressed-Qwen2.5-7B-Instruct"
+ADAPTER_PATH="outputs/Qwen2.5-7B-Instruct/bandit/math/adapter_iter_30"
+COMPRESSION_RATIO=1.0
 
 
 CUDA_VISIBLE_DEVICES=0 python ./evaluation.py --output-dir ${OUPTUT_DIR} --model-path ${MODEL_PATH} --tokenizer-path ${MODEL_PATH} \

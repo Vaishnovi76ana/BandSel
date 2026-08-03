@@ -39,14 +39,37 @@ def is_correct(item, pred_key='prediction', prec=1e-3):
             label = label or (ans and pred == ans) or math_equal(pred, ans)
             return label
     else:
-        print(item, flush=True)
-        raise NotImplementedError()
+        print("=" * 80)
+        print("Unsupported types")
+        print("prediction type:", type(pred))
+        print("answer type    :", type(ans))
+        print("prediction:", repr(pred))
+        print("answer    :", repr(ans))
+        print(item)
+        raise NotImplementedError(
+            f"prediction={type(pred)}, answer={type(ans)}"
+        )
+        #print(item, flush=True)
+        #raise NotImplementedError()
 
 def eval_math(item, pred_key='prediction', prec=1e-3):
     pred = item[pred_key]
     if pred_key == 'program_output' and isinstance(pred, str):
         pred = [pred]
     ans = item['answer']
+
+    if isinstance(pred,list) and isinstance(ans,str):
+        if len(pred) == 1:
+            pred = pred[0]
+        else:
+            ans = [ans]
+
+    if isinstance(ans, list) and isinstance(pred,str):
+        if len(ans) == 1:
+            ans = ans[0]
+        else:
+            pred = [pred]
+            
     if isinstance(pred, list) and isinstance(ans, list):
         # for some questions in MATH, `reference` repeats answers
         _ans = []

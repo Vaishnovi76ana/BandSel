@@ -42,7 +42,7 @@ MAX_ITERATIONS=30
 # ===========================
 LAMBDA_REG=1.0
 CONFIDENCE_SCALE=1.0
-BETA=0.0
+BETA=0.1
 VAL_EVAL_SIZE=50
 
 # Skip SFT?
