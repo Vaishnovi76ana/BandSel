@@ -58,7 +58,7 @@ def generate_completions(model, tokenizer, prompts, batch_size=1, stop_id_sequen
             batch_outputs = model.generate(
                 input_ids=batch_input_ids,
                 attention_mask=attention_mask,
-                stopping_criteria=[KeyWordsCriteri0a(stop_id_sequences, tokenizer, batch_input_ids.size(1))] if stop_id_sequences else None,
+                stopping_criteria=[KeyWordsCriteria(stop_id_sequences, tokenizer, batch_input_ids.size(1))] if stop_id_sequences else None,
                 pad_token_id=tokenizer.eos_token_id,
                 **generation_kwargs
             )

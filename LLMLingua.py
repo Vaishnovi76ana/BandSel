@@ -123,10 +123,24 @@ def get_average_compress_rate(data):
     print(f"Average Compression Rate: {compress_rate}")
 
 
-def data_processing_gsm8k(input_dir="outputs/Qwen2.5-7B-Instruct/gsm8k/7b/", model_type="qwen",
-                          llmlingua_path="/your_model_path/llmlingua-2-xlm-roberta-large-meetingbank"):
+def data_processing_gsm8k(input_dir="outputs/Qwen2.5-7B-Instruct/tokenskip/gsm8k/", model_type="qwen",
+                          llmlingua_path="microsoft/llmlingua-2-xlm-roberta-large-meetingbank"):
     """
     The overall pipeline to process the GSM8K data.
+    """
+    input_path = os.path.join(input_dir, "Original/train/samples/predictions.jsonl")
+    correct_path = os.path.join(input_dir, "Original/train/samples/predictions_correct.jsonl")
+    formatted_path = os.path.join(input_dir, "Original/train/samples/predictions_formatted.jsonl")
+    compressed_dir = os.path.join(input_dir, "Compression")
+
+    filter_correct_outputs(input_path=input_path, output_path=correct_path)
+    filter_formatted_outputs(input_path=correct_path, output_path=formatted_path, model_type=model_type)
+    compress_cot_outputs(input_path=formatted_path, output_dir=compressed_dir, model_type=model_type, llmlingua_path=llmlingua_path)
+
+def data_processing_math(input_dir="outputs/Qwen2.5-7B-Instruct/tokenskip/math/", model_type="qwen",
+                          llmlingua_path="microsoft/llmlingua-2-xlm-roberta-large-meetingbank"):
+    """
+    The overall pipeline to process the MATH data.
     """
     input_path = os.path.join(input_dir, "Original/train/samples/predictions.jsonl")
     correct_path = os.path.join(input_dir, "Original/train/samples/predictions_correct.jsonl")
