@@ -1,0 +1,11 @@
+{
+  "signal_ratio": 0.0,
+  "distinct_1_ratio": 0.0,
+  "distinct_2_ratio": 0.0,
+  "distinct_3_ratio": 0.0,
+  "distinct_4_ratio": 0.0,
+  "top_k_mass_ratio": 0.0,
+  "windowed_jaccard": 0.0,
+  "longest_repeat_ratio": 0.0,
+  "llm_judge_score": 0.0
+}

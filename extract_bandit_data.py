@@ -1,7 +1,7 @@
 import json
 
-model_name = "Qwen2.5-7B-Instruct"
-benchmark = "gsm8k"
+model_name = "Qwen2.5-3B-Instruct"
+benchmark = "math"
 
 files = [
     (0.5, f"outputs/{model_name}/tokenskip/{benchmark}/TokenSkip/train/0.5/samples/predictions.jsonl"),

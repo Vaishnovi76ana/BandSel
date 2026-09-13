@@ -1,0 +1,11 @@
+{
+  "signal_ratio": -0.04378242749421991,
+  "distinct_1_ratio": 0.003796887302060493,
+  "distinct_2_ratio": 0.025463950481337937,
+  "distinct_3_ratio": 0.03504387845973619,
+  "distinct_4_ratio": 0.04127737219842763,
+  "top_k_mass_ratio": 0.01380053424574469,
+  "windowed_jaccard": 0.00796004026507476,
+  "longest_repeat_ratio": -0.0004575210433833435,
+  "llm_judge_score": 0.007585986071900544
+}

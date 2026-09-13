@@ -1,0 +1,1303 @@
+GPU: NVIDIA H100 80GB HBM3
+10 U_t, 10 N_t
+Reward: (1-beta)*(accuracy-base_accuracy) + beta*(1-avg_CR), beta=0.5
+Mode: FULL CASE ALGORITHM with SFT
+============================================================
+CASE BANDIT: Algorithm 1 — Qwen2.5-7B-Instruct on DeepMath
+============================================================
+Loaded 6198 samples with 9 features each
+
+Creating 50 arms 50 samples
+Maximum pairwise overlap: 10 samples (20.0%)
+
+Formed 50 arms of 50 traces each
+  - Training arms (U_t): 10
+  - Challenger arms (N_t): 10
+  - Exploration arms (M_t): 0
+  - Validation samples: 50
+  - Total training samples: 500
+U_0, N_0 initialized ..........
+
+Initial arm scores:
+  arm_0: score=1.7984 [U_t]
+  arm_1: score=1.7645 [rest]
+  arm_2: score=1.7553 [rest]
+  arm_3: score=1.7618 [rest]
+  arm_4: score=1.7595 [rest]
+  arm_5: score=1.7438 [rest]
+  arm_6: score=1.7639 [rest]
+  arm_7: score=1.7751 [N_t]
+  arm_8: score=1.7468 [rest]
+  arm_9: score=1.7375 [rest]
+  arm_10: score=1.7621 [rest]
+  arm_11: score=1.7723 [N_t]
+  arm_12: score=1.7411 [rest]
+  arm_13: score=1.7378 [rest]
+  arm_14: score=1.7373 [rest]
+  arm_15: score=1.7567 [rest]
+  arm_16: score=1.7470 [rest]
+  arm_17: score=1.7579 [rest]
+  arm_18: score=1.7922 [U_t]
+  arm_19: score=1.7470 [rest]
+  arm_20: score=1.7717 [N_t]
+  arm_21: score=1.7567 [rest]
+  arm_22: score=1.7809 [U_t]
+  arm_23: score=1.7854 [U_t]
+  arm_24: score=1.7507 [rest]
+  arm_25: score=1.7603 [rest]
+  arm_26: score=1.7654 [rest]
+  arm_27: score=1.7994 [U_t]
+  arm_28: score=1.7591 [rest]
+  arm_29: score=1.7663 [N_t]
+  arm_30: score=1.7499 [rest]
+  arm_31: score=1.7628 [rest]
+  arm_32: score=1.7856 [U_t]
+  arm_33: score=1.7556 [rest]
+  arm_34: score=1.7733 [N_t]
+  arm_35: score=1.7701 [N_t]
+  arm_36: score=1.7452 [rest]
+  arm_37: score=1.8023 [U_t]
+  arm_38: score=1.7470 [rest]
+  arm_39: score=1.7892 [U_t]
+  arm_40: score=1.7646 [rest]
+  arm_41: score=1.7776 [N_t]
+  arm_42: score=1.7611 [rest]
+  arm_43: score=1.7251 [rest]
+  arm_44: score=1.7787 [N_t]
+  arm_45: score=1.7928 [U_t]
+  arm_46: score=1.7657 [N_t]
+  arm_47: score=1.7724 [N_t]
+  arm_48: score=1.7909 [U_t]
+  arm_49: score=1.7423 [rest]
+
+Loading model...
+Loading Qwen/Qwen2.5-7B-Instruct in bfloat16...
+trainable params: 40,370,176 || all params: 7,655,986,688 || trainable%: 0.5273
+
+=== QWEN GENERATION SANITY CHECK ===
+Input tokens=41, EOS=151645, PAD=151643
+Generated tokens=128
+Generated text: 'To evaluate \\(\\log_{\\frac{1}{3}} 9\\), we need to determine the exponent to which \\(\\frac{1}{3}\\) must be raised to obtain 9. In other words, we need to find \\(x\\) such that:\n\n\\[\n\\left(\\frac{1}{3}\\right)^x = 9\n\\]\n\nFirst, express 9 as a power of 3:\n\\[\n9 = 3^2\n\\]\n\nNext, rewrite \\(\\frac{1}{3}\\) as \\(3^{-1}\\):\n\\[\n\\left(\\frac{1}{3'
+
+############################################################
+# ITERATION 1/100
+############################################################
+
+[Step 8-13] Swap check (U_0 vs N_0)...
+Reward gap : -0.002203910361985084, W : 4.459391160294022
+  Reward Gap: -0.0022 
+  Worst U_0: arm_22 (score=1.7809)
+  Best  N_0: arm_44 (score=1.7787)
+  >> No swap (streak: 1)
+
+[Step 14] M_1 sampled: {'arm_14', 'arm_15', 'arm_26', 'arm_16', 'arm_30', 'arm_25', 'arm_12', 'arm_42', 'arm_8', 'arm_3'} (10 arms from exploration pool)
+
+[Step 15] Reconstruct N_1...
+  >> N_t reconstructed: no changes
+    Sets: U_1=10, N_1=10
+Reward gap : 0.02725773418868882, W : 4.480201332295383
+Reward gap : 0.023662330408616095, W : 4.471869056666754
+Reward gap : 0.03065162085148132, W : 4.447523742297177
+Reward gap : 0.02994626666358524, W : 4.487268858297862
+Reward gap : 0.024724298905313358, W : 4.469936346624695
+Reward gap : 0.03004252597195567, W : 4.493834338825537
+Reward gap : 0.028985500637271455, W : 4.45934786044707
+Reward gap : 0.03604818423278533, W : 4.446268084180891
+Reward gap : 0.03221586887113914, W : 4.448952362031474
+Reward gap : 0.036610892660060346, W : 4.464358963137759
+Reward gap : 0.00579931414205781, W : 4.467723435922651
+Reward gap : 0.002203910361985084, W : 4.459391160294022
+Reward gap : 0.00919320080485031, W : 4.435045845924445
+Reward gap : 0.008487846616954231, W : 4.47479096192513
+Reward gap : 0.0032658788586823473, W : 4.457458450251963
+Reward gap : 0.008584105925324659, W : 4.481356442452805
+Reward gap : 0.007527080590640445, W : 4.446869964074338
+Reward gap : 0.01458976418615432, W : 4.4337901878081585
+Reward gap : 0.010757448824508131, W : 4.436474465658742
+Reward gap : 0.015152472613429335, W : 4.451881066765027
+Reward gap : 0.023339467630369315, W : 4.493181072320052
+Reward gap : 0.01974406385029659, W : 4.484848796691423
+Reward gap : 0.026733354293161815, W : 4.460503482321847
+Reward gap : 0.026028000105265736, W : 4.500248598322531
+Reward gap : 0.020806032346993852, W : 4.482916086649364
+Reward gap : 0.026124259413636164, W : 4.506814078850207
+Reward gap : 0.02506723407895195, W : 4.47232760047174
+Reward gap : 0.032129917674465824, W : 4.45924782420556
+Reward gap : 0.028297602312819636, W : 4.461932102056143
+Reward gap : 0.03269262610174084, W : 4.477338703162428
+Reward gap : 0.015873428443243576, W : 4.499436574726444
+Reward gap : 0.01227802466317085, W : 4.491104299097815
+Reward gap : 0.019267315106036076, W : 4.466758984728238
+Reward gap : 0.018561960918139997, W : 4.5065041007289235
+Reward gap : 0.013339993159868113, W : 4.489171589055756
+Reward gap : 0.018658220226510425, W : 4.513069581256598
+Reward gap : 0.01760119489182621, W : 4.478583102878131
+Reward gap : 0.024663878487340085, W : 4.465503326611952
+Reward gap : 0.020831563125693897, W : 4.4681876044625355
+Reward gap : 0.0252265869146151, W : 4.48359420556882
+Reward gap : 0.014154735176814315, W : 4.502966016238637
+Reward gap : 0.01055933139674159, W : 4.494633740610007
+Reward gap : 0.017548621839606815, W : 4.4702884262404305
+Reward gap : 0.016843267651710736, W : 4.510033542241116
+Reward gap : 0.011621299893438852, W : 4.492701030567948
+Reward gap : 0.016939526960081164, W : 4.516599022768791
+Reward gap : 0.01588250162539695, W : 4.482112544390324
+Reward gap : 0.022945185220910824, W : 4.469032768124144
+Reward gap : 0.019112869859264636, W : 4.471717045974728
+Reward gap : 0.02350789364818584, W : 4.487123647081012
+Reward gap : 0.017151424511862023, W : 4.4626695030017265
+Reward gap : 0.013556020731789298, W : 4.454337227373097
+Reward gap : 0.020545311174654524, W : 4.429991913003521
+Reward gap : 0.019839956986758445, W : 4.4697370290042056
+Reward gap : 0.014617989228486561, W : 4.452404517331039
+Reward gap : 0.019936216295128872, W : 4.476302509531881
+Reward gap : 0.01887919096044466, W : 4.441816031153414
+Reward gap : 0.025941874555958533, W : 4.428736254887235
+Reward gap : 0.022109559194312345, W : 4.431420532737818
+Reward gap : 0.02650458298323355, W : 4.446827133844103
+Reward gap : 0.02431738782509285, W : 4.532289853027057
+Reward gap : 0.020721984045020125, W : 4.523957577398427
+Reward gap : 0.02771127448788535, W : 4.49961226302885
+Reward gap : 0.027005920299989272, W : 4.539357379029536
+Reward gap : 0.02178395254171739, W : 4.522024867356368
+Reward gap : 0.0271021796083597, W : 4.54592285955721
+Reward gap : 0.026045154273675486, W : 4.5114363811787435
+Reward gap : 0.03310783786918936, W : 4.498356604912564
+Reward gap : 0.029275522507543172, W : 4.501040882763148
+Reward gap : 0.033670546296464376, W : 4.516447483869432
+Reward gap : 0.010281822363416016, W : 4.496022582403312
+Reward gap : 0.00668641858334329, W : 4.487690306774683
+Reward gap : 0.013675709026208516, W : 4.463344992405106
+Reward gap : 0.012970354838312437, W : 4.503090108405791
+Reward gap : 0.007748387080040553, W : 4.485757596732624
+Reward gap : 0.013066614146682864, W : 4.509655588933466
+Reward gap : 0.01200958881199865, W : 4.475169110554999
+Reward gap : 0.019072272407512525, W : 4.4620893342888195
+Reward gap : 0.015239957045866337, W : 4.464773612139403
+Reward gap : 0.01963498083478754, W : 4.480180213245688
+Reward gap : 0.01776328351935974, W : 4.505937349737268
+Reward gap : 0.014167879739287015, W : 4.497605074108638
+Reward gap : 0.02115717018215224, W : 4.4732597597390615
+Reward gap : 0.02045181599425616, W : 4.513004875739747
+Reward gap : 0.015229848235984278, W : 4.495672364066579
+Reward gap : 0.02054807530262659, W : 4.519570356267422
+Reward gap : 0.019491049967942375, W : 4.485083877888955
+Reward gap : 0.02655373356345625, W : 4.472004101622775
+Reward gap : 0.022721418201810062, W : 4.474688379473359
+Reward gap : 0.027116441990731266, W : 4.490094980579643
+Reward gap : 0.010571906948026122, W : 4.484876719393378
+Reward gap : 0.006976503167953396, W : 4.476544443764748
+Reward gap : 0.013965793610818622, W : 4.452199129395171
+Reward gap : 0.013260439422922543, W : 4.491944245395857
+Reward gap : 0.00803847166465066, W : 4.474611733722688
+Reward gap : 0.01335669873129297, W : 4.498509725923531
+Reward gap : 0.012299673396608757, W : 4.4640232475450645
+Reward gap : 0.01936235699212263, W : 4.450943471278885
+Reward gap : 0.015530041630476443, W : 4.453627749129469
+Reward gap : 0.019925065419397647, W : 4.469034350235752
+
+[Step 16-18] Most ambiguous arms:
+    b_(2): arm_27
+    s_(2): arm_11
+    B_1(s,b): 4.573025
+
+[Step 20] CASE arm selection (U_1 ∪ N_1)...
+    -> arm_27 [U_t] (50 traces, pull #1)
+
+[Step 21] Resetting LoRA adapter...
+
+[Step 21] SFT on 50 traces...
+Prepared 50 training examples; skipped 0 empty/invalid examples.
+Training iter 1 (50 samples, 3 epochs)...
+{'loss': 4.8481, 'grad_norm': 2.656686305999756, 'learning_rate': 0.0001, 'epoch': 1.48}
+{'train_runtime': 24.0632, 'train_samples_per_second': 6.234, 'train_steps_per_second': 0.748, 'train_loss': 3.625489870707194, 'epoch': 2.64}
+Saved to bandit_output/adapter_iter_1
+
+[Step 21] Evaluating 50 val samples...
+
+>>> EVALUATING 50 SAMPLES in 7 batches (bs=8) [Qwen HF] <<<
+
+Running inference on 8 samples...
+  Prompt tokens: 103, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 100.00000
+Avg CoT Length = 327.12500
+Sample latency = 1.92674
+  [1/50] CR=0.93, correct=True
+  [2/50] CR=1.72, correct=True
+  [3/50] CR=1.98, correct=True
+  [4/50] CR=1.34, correct=True
+  [5/50] CR=0.56, correct=True
+  [6/50] CR=0.98, correct=True
+  [7/50] CR=1.10, correct=True
+  [8/50] CR=1.12, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 200, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 531.25000
+Sample latency = 4.97602
+  [9/50] CR=1.24, correct=True
+  [10/50] CR=1.19, correct=True
+  [11/50] CR=2.02, correct=True
+  [12/50] CR=1.65, correct=True
+  [13/50] CR=0.57, correct=True
+  [14/50] CR=1.44, correct=False
+  [15/50] CR=0.48, correct=True
+  [16/50] CR=2.75, correct=False
+
+Running inference on 8 samples...
+  Prompt tokens: 98, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 518.12500
+Sample latency = 8.72099
+  [17/50] CR=1.21, correct=True
+  [18/50] CR=0.72, correct=False
+  [19/50] CR=1.43, correct=True
+  [20/50] CR=2.21, correct=True
+  [21/50] CR=1.27, correct=True
+  [22/50] CR=1.01, correct=True
+  [23/50] CR=1.15, correct=True
+  [24/50] CR=3.29, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 73, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 400.62500
+Sample latency = 3.09233
+  [25/50] CR=3.38, correct=False
+  [26/50] CR=1.56, correct=True
+  [27/50] CR=0.89, correct=False
+  [28/50] CR=1.50, correct=True
+  [29/50] CR=0.94, correct=True
+  [30/50] CR=1.18, correct=True
+  [31/50] CR=0.95, correct=True
+  [32/50] CR=0.94, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 190, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 499.25000
+Sample latency = 9.46147
+  [33/50] CR=1.78, correct=True
+  [34/50] CR=3.30, correct=False
+  [35/50] CR=1.37, correct=True
+  [36/50] CR=1.22, correct=True
+  [37/50] CR=1.15, correct=True
+  [38/50] CR=1.10, correct=True
+  [39/50] CR=0.91, correct=False
+  [40/50] CR=1.50, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 161, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 62.50000
+Avg CoT Length = 634.25000
+Sample latency = 7.48865
+  [41/50] CR=0.61, correct=False
+  [42/50] CR=2.41, correct=True
+  [43/50] CR=0.58, correct=False
+  [44/50] CR=1.65, correct=True
+  [45/50] CR=1.24, correct=True
+  [46/50] CR=1.01, correct=True
+  [47/50] CR=3.32, correct=False
+  [48/50] CR=1.54, correct=True
+
+Running inference on 2 samples...
+  Prompt tokens: 62, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 100.00000
+Avg CoT Length = 258.00000
+Sample latency = 5.49520
+  [49/50] CR=1.16, correct=True
+  [50/50] CR=0.94, correct=True
+
+>>> Acc=80.00% (40/50), Avg_CR=1.4295 <<<
+
+Reward calculated : -0.17177100192330674
+
+[Step 22-23] arm_27: acc=0.8000, CR=1.4295, REWARD=-0.1718 (pulls: 1)
+    Weights: [-0.0231, -0.0190, -0.0299, -0.0340, -0.0359, -0.0134, -0.0068, -0.0017, -0.0252]
+
+############################################################
+# ITERATION 2/100
+############################################################
+
+[Step 8-13] Swap check (U_1 vs N_1)...
+Reward gap : 0.004775495168357541, W : 2.3008572138071255
+  Reward Gap: 0.0048 
+  Worst U_1: arm_27 (score=-0.1336)
+  Best  N_1: arm_29 (score=-0.1288)
+  >> SWAPPED: arm_27 -> N_(t-1)', arm_29 -> U_t
+
+[Step 14] M_2 sampled: {'arm_14', 'arm_4', 'arm_21', 'arm_9', 'arm_5', 'arm_19', 'arm_1', 'arm_3', 'arm_6', 'arm_10'} (10 arms from exploration pool)
+
+[Step 15] Reconstruct N_2...
+  >> N_t reconstructed: promoted ['arm_14', 'arm_4', 'arm_9', 'arm_5', 'arm_19', 'arm_1', 'arm_21'] from M_t -> N_t
+  >> N_t reconstructed: demoted ['arm_7', 'arm_44', 'arm_47', 'arm_41', 'arm_11', 'arm_27', 'arm_46'] from N_(t-1)' -> rest
+    Sets: U_2=10, N_2=10
+Reward gap : -0.0016894699375436528, W : 2.2773178187908965
+Reward gap : -0.0012090361211179734, W : 2.2801786834652993
+Reward gap : -0.002793938432606363, W : 2.2666729203027023
+Reward gap : -0.0016603347972545257, W : 2.276913053469467
+Reward gap : -0.0032698354947768016, W : 2.262561522670171
+Reward gap : -0.0020675905910571835, W : 2.273314522267215
+Reward gap : -0.0012573484733893747, W : 2.279109614852096
+Reward gap : -0.0009395028955603568, W : 2.2820114764224986
+Reward gap : -0.0015842046166820722, W : 2.277864282056644
+Reward gap : -0.0017241555583177581, W : 2.2751423441235468
+Reward gap : -0.0009648117679594836, W : 2.2708351445188795
+Reward gap : -0.00048437795153380425, W : 2.2736960091932827
+Reward gap : -0.002069280263022194, W : 2.2601902460306857
+Reward gap : -0.0009356766276703565, W : 2.2704303791974505
+Reward gap : -0.0025451773251926324, W : 2.2560788483981544
+Reward gap : -0.0013429324214730143, W : 2.2668318479951983
+Reward gap : -0.0005326903038052055, W : 2.2726269405800794
+Reward gap : -0.00021484472597618764, W : 2.275528802150482
+Reward gap : -0.0008595464470979031, W : 2.2713816077846274
+Reward gap : -0.000999497388733589, W : 2.2686596698515302
+Reward gap : -0.0024560955515464944, W : 2.283668462425001
+Reward gap : -0.001975661735120815, W : 2.2865293270994043
+Reward gap : -0.0035605640466092048, W : 2.2730235639368073
+Reward gap : -0.0024269604112573673, W : 2.283263697103572
+Reward gap : -0.004036461108779643, W : 2.268912166304276
+Reward gap : -0.002834216205060025, W : 2.27966516590132
+Reward gap : -0.0020239740873922163, W : 2.285460258486201
+Reward gap : -0.0017061285095631984, W : 2.2883621200566036
+Reward gap : -0.002350830230684914, W : 2.284214925690749
+Reward gap : -0.0024907811723205997, W : 2.2814929877576517
+Reward gap : -0.0028322710780836757, W : 2.2865236147949144
+Reward gap : -0.0023518372616579963, W : 2.2893844794693177
+Reward gap : -0.003936739573146386, W : 2.2758787163067207
+Reward gap : -0.0028031359377945486, W : 2.286118849473485
+Reward gap : -0.0044126366353168245, W : 2.2717673186741894
+Reward gap : -0.0032103917315972064, W : 2.282520318271233
+Reward gap : -0.0024001496139293976, W : 2.2883154108561143
+Reward gap : -0.0020823040361003797, W : 2.2912172724265165
+Reward gap : -0.002727005757222095, W : 2.2870700780606623
+Reward gap : -0.002866956698857781, W : 2.284348140127565
+Reward gap : -0.0030351024273785887, W : 2.288422935683888
+Reward gap : -0.0025546686109529093, W : 2.291283800358291
+Reward gap : -0.004139570922441299, W : 2.277778037195694
+Reward gap : -0.0030059672870894616, W : 2.288018170362459
+Reward gap : -0.0046154679846117375, W : 2.273666639563163
+Reward gap : -0.0034132230808921193, W : 2.2844196391602067
+Reward gap : -0.0026029809632243106, W : 2.290214731745088
+Reward gap : -0.0022851353853952927, W : 2.2931165933154904
+Reward gap : -0.002929837106517008, W : 2.288969398949636
+Reward gap : -0.003069788048152694, W : 2.2862474610165386
+Reward gap : -0.000634683261434732, W : 2.2693304056784687
+Reward gap : -0.00015424944500905258, W : 2.2721912703528715
+Reward gap : -0.0017391517564974424, W : 2.2586855071902745
+Reward gap : -0.0006055481211456049, W : 2.2689256403570393
+Reward gap : -0.0022150488186678807, W : 2.254574109557743
+Reward gap : -0.0010128039149482626, W : 2.265327109154787
+Reward gap : -0.00020256179728045387, W : 2.271122201739668
+Reward gap : 0.00011528378054856403, W : 2.2740240633100703
+Reward gap : -0.0005294179405731514, W : 2.269876868944216
+Reward gap : -0.0006693688822088373, W : 2.267154931011119
+Reward gap : -0.002612891854363697, W : 2.2853966683194464
+Reward gap : -0.0021324580379380176, W : 2.2882575329938497
+Reward gap : -0.0037173603494264074, W : 2.2747517698312527
+Reward gap : -0.00258375671407457, W : 2.2849919029980175
+Reward gap : -0.004193257411596846, W : 2.2706403721987214
+Reward gap : -0.0029910125078772276, W : 2.2813933717957653
+Reward gap : -0.002180770390209419, W : 2.287188464380646
+Reward gap : -0.001862924812380401, W : 2.2900903259510486
+Reward gap : -0.0025076265335021164, W : 2.2859431315851944
+Reward gap : -0.0026475774751378023, W : 2.283221193652097
+Reward gap : 1.2123550807069394e-05, W : 2.2629728128486906
+Reward gap : 0.0004925573672327488, W : 2.265833677523094
+Reward gap : -0.001092344944255641, W : 2.252327914360497
+Reward gap : 4.125869109619651e-05, W : 2.2625680475272616
+Reward gap : -0.0015682420064260794, W : 2.2482165167279655
+Reward gap : -0.00036599710270646124, W : 2.2589695163250094
+Reward gap : 0.0004442450149613475, W : 2.26476460890989
+Reward gap : 0.0007620905927903654, W : 2.2676664704802927
+Reward gap : 0.00011738887166864997, W : 2.2635192761144385
+Reward gap : -2.2562069967035914e-05, W : 2.2607973381813413
+Reward gap : -0.003213737442357062, W : 2.2897805172205397
+Reward gap : -0.0027333036259313825, W : 2.2926413818949425
+Reward gap : -0.004318205937419772, W : 2.2791356187323455
+Reward gap : -0.003184602302067935, W : 2.2893757518991102
+Reward gap : -0.004794102999590211, W : 2.2750242210998146
+Reward gap : -0.0035918580958705926, W : 2.285777220696858
+Reward gap : -0.002781615978202784, W : 2.291572313281739
+Reward gap : -0.002463770400373766, W : 2.294474174852142
+Reward gap : -0.0031084721214954814, W : 2.290326980486287
+Reward gap : -0.0032484230631311672, W : 2.28760504255319
+Reward gap : -0.0019388689299464357, W : 2.280424161575074
+Reward gap : -0.0014584351135207563, W : 2.2832850262494775
+Reward gap : -0.003043337425009146, W : 2.2697792630868805
+Reward gap : -0.0019097337896573086, W : 2.280019396253645
+Reward gap : -0.0035192344871795844, W : 2.2656678654543487
+Reward gap : -0.0023169895834599663, W : 2.2764208650513926
+Reward gap : -0.0015067474657921576, W : 2.2822159576362737
+Reward gap : -0.0011889018879631397, W : 2.2851178192066763
+Reward gap : -0.001833603609084855, W : 2.280970624840822
+Reward gap : -0.001973554550720541, W : 2.278248686907725
+
+[Step 16-18] Most ambiguous arms:
+    b_(3): arm_45
+    s_(3): arm_34
+    B_2(s,b): 2.292010
+
+[Step 20] CASE arm selection (U_2 ∪ N_2)...
+    -> arm_14 [N_t] (50 traces, pull #1)
+
+[Step 21] Resetting LoRA adapter...
+
+[Step 21] SFT on 50 traces...
+Prepared 50 training examples; skipped 0 empty/invalid examples.
+Training iter 2 (50 samples, 3 epochs)...
+{'loss': 4.6158, 'grad_norm': 4.35815954208374, 'learning_rate': 0.0001, 'epoch': 1.48}
+{'train_runtime': 26.3996, 'train_samples_per_second': 5.682, 'train_steps_per_second': 0.682, 'train_loss': 3.516285684373644, 'epoch': 2.64}
+Saved to bandit_output/adapter_iter_2
+
+[Step 21] Evaluating 50 val samples...
+
+>>> EVALUATING 50 SAMPLES in 7 batches (bs=8) [Qwen HF] <<<
+
+Running inference on 8 samples...
+  Prompt tokens: 103, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 100.00000
+Avg CoT Length = 395.25000
+Sample latency = 3.88104
+  [1/50] CR=1.00, correct=True
+  [2/50] CR=1.82, correct=True
+  [3/50] CR=1.83, correct=True
+  [4/50] CR=1.47, correct=True
+  [5/50] CR=1.19, correct=True
+  [6/50] CR=1.03, correct=True
+  [7/50] CR=1.09, correct=True
+  [8/50] CR=1.23, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 200, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 722.37500
+Sample latency = 8.85709
+  [9/50] CR=1.67, correct=True
+  [10/50] CR=1.35, correct=True
+  [11/50] CR=2.26, correct=True
+  [12/50] CR=1.30, correct=True
+  [13/50] CR=0.88, correct=True
+  [14/50] CR=3.17, correct=True
+  [15/50] CR=0.54, correct=True
+  [16/50] CR=2.97, correct=False
+
+Running inference on 8 samples...
+  Prompt tokens: 98, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 458.87500
+Sample latency = 4.76795
+  [17/50] CR=1.04, correct=True
+  [18/50] CR=0.82, correct=False
+  [19/50] CR=1.40, correct=False
+  [20/50] CR=0.99, correct=True
+  [21/50] CR=1.96, correct=True
+  [22/50] CR=0.88, correct=True
+  [23/50] CR=0.89, correct=True
+  [24/50] CR=1.95, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 73, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 335.50000
+Sample latency = 2.98117
+  [25/50] CR=1.11, correct=True
+  [26/50] CR=1.58, correct=True
+  [27/50] CR=1.06, correct=True
+  [28/50] CR=0.71, correct=True
+  [29/50] CR=0.84, correct=True
+  [30/50] CR=1.04, correct=True
+  [31/50] CR=1.28, correct=False
+  [32/50] CR=1.25, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 190, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 331.12500
+Sample latency = 2.90677
+  [33/50] CR=1.44, correct=True
+  [34/50] CR=1.00, correct=False
+  [35/50] CR=2.00, correct=True
+  [36/50] CR=1.27, correct=True
+  [37/50] CR=1.61, correct=True
+  [38/50] CR=1.11, correct=True
+  [39/50] CR=0.79, correct=False
+  [40/50] CR=1.62, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 161, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 511.62500
+Sample latency = 4.05701
+  [41/50] CR=0.29, correct=True
+  [42/50] CR=2.48, correct=True
+  [43/50] CR=0.66, correct=False
+  [44/50] CR=1.47, correct=True
+  [45/50] CR=1.29, correct=True
+  [46/50] CR=1.32, correct=True
+  [47/50] CR=1.31, correct=False
+  [48/50] CR=1.54, correct=True
+
+Running inference on 2 samples...
+  Prompt tokens: 62, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 100.00000
+Avg CoT Length = 355.50000
+Sample latency = 7.99601
+  [49/50] CR=1.70, correct=True
+  [50/50] CR=1.19, correct=True
+
+>>> Acc=84.00% (42/50), Avg_CR=1.3537 <<<
+
+Reward calculated : -0.1138485372924965
+
+[Step 22-23] arm_14: acc=0.8400, CR=1.3537, REWARD=-0.1138 (pulls: 1)
+    Weights: [-0.0218, -0.0183, -0.0286, -0.0325, -0.0342, -0.0124, -0.0062, -0.0016, -0.0238]
+
+############################################################
+# ITERATION 3/100
+############################################################
+
+[Step 8-13] Swap check (U_2 vs N_2)...
+Reward gap : 0.004583610636067603, W : 1.7848910450155184
+  Reward Gap: 0.0046 
+  Worst U_2: arm_45 (score=-0.1256)
+  Best  N_2: arm_5 (score=-0.1210)
+  >> SWAPPED: arm_45 -> N_(t-1)', arm_5 -> U_t
+
+[Step 14] M_3 sampled: {'arm_17', 'arm_15', 'arm_28', 'arm_12', 'arm_42', 'arm_41', 'arm_27', 'arm_49', 'arm_31', 'arm_33'} (10 arms from exploration pool)
+
+[Step 15] Reconstruct N_3...
+  >> N_t reconstructed: promoted ['arm_17', 'arm_12', 'arm_42', 'arm_49', 'arm_31'] from M_t -> N_t
+  >> N_t reconstructed: demoted ['arm_4', 'arm_1', 'arm_34', 'arm_35', 'arm_45'] from N_(t-1)' -> rest
+    Sets: U_3=10, N_3=10
+Reward gap : -0.0016386220708141108, W : 1.7861256431541572
+Reward gap : -0.0018003056657780597, W : 1.786209969319516
+Reward gap : -0.002675454462814225, W : 1.7786305291189686
+Reward gap : -0.0015974485361007068, W : 1.7868079029485024
+Reward gap : -0.0016643180610618202, W : 1.7848578507983968
+Reward gap : -0.0018274812975580396, W : 1.784114001888182
+Reward gap : -0.0019903605011860614, W : 1.7834038148099467
+Reward gap : -0.001664803617129812, W : 1.7859893290144966
+Reward gap : -0.0019495222726289146, W : 1.7839412639170902
+Reward gap : -0.0016555362784444194, W : 1.7849976450054723
+Reward gap : -0.0009528541247961902, W : 1.7813249765995742
+Reward gap : -0.0011145377197601392, W : 1.781409302764933
+Reward gap : -0.0019896865167963046, W : 1.7738298625643856
+Reward gap : -0.0009116805900827862, W : 1.7820072363939194
+Reward gap : -0.0009785501150438997, W : 1.7800571842438138
+Reward gap : -0.001141713351540119, W : 1.7793133353335988
+Reward gap : -0.0013045925551681409, W : 1.7786031482553635
+Reward gap : -0.0009790356711118914, W : 1.7811886624599136
+Reward gap : -0.001263754326610994, W : 1.7791405973625072
+Reward gap : -0.0009697683324264988, W : 1.780196978450889
+Reward gap : -0.0023764553291623775, W : 1.7917753625123922
+Reward gap : -0.0025381389241263264, W : 1.7918596886777514
+Reward gap : -0.003413287721162492, W : 1.7842802484772036
+Reward gap : -0.0023352817944489734, W : 1.7924576223067374
+Reward gap : -0.002402151319410087, W : 1.7905075701566322
+Reward gap : -0.002565314555906306, W : 1.7897637212464175
+Reward gap : -0.002728193759534328, W : 1.789053534168182
+Reward gap : -0.0024026368754780786, W : 1.7916390483727318
+Reward gap : -0.0026873555309771813, W : 1.7895909832753254
+Reward gap : -0.002393369536792686, W : 1.790647364363707
+Reward gap : 0.0014913989171265463, W : 1.7637714526475414
+Reward gap : 0.0013297153221625974, W : 1.7638557788129001
+Reward gap : 0.0004545665251264319, W : 1.7562763386123528
+Reward gap : 0.0015325724518399503, W : 1.7644537124418866
+Reward gap : 0.0014657029268788369, W : 1.7625036602917814
+Reward gap : 0.0013025396903826175, W : 1.7617598113815665
+Reward gap : 0.0011396604867545956, W : 1.7610496243033311
+Reward gap : 0.0014652173708108451, W : 1.763635138507881
+Reward gap : 0.0011804987153117424, W : 1.7615870734104746
+Reward gap : 0.0014744847094962377, W : 1.7626434544988563
+Reward gap : -0.0027241480730793577, W : 1.7927336261580025
+Reward gap : -0.0028858316680433066, W : 1.7928179523233616
+Reward gap : -0.003760980465079472, W : 1.7852385121228138
+Reward gap : -0.0026829745383659537, W : 1.7934158859523477
+Reward gap : -0.002749844063327067, W : 1.791465833802242
+Reward gap : -0.0029130072998232864, W : 1.7907219848920275
+Reward gap : -0.0030758865034513083, W : 1.790011797813792
+Reward gap : -0.002750329619395059, W : 1.7925973120183418
+Reward gap : -0.0030350482748941615, W : 1.7905492469209354
+Reward gap : -0.0027410622807096663, W : 1.7916056280093173
+Reward gap : -0.0029310799572731805, W : 1.79571729684396
+Reward gap : -0.0030927635522371294, W : 1.7958016230093192
+Reward gap : -0.003967912349273295, W : 1.7882221828087714
+Reward gap : -0.0028899064225597765, W : 1.7963995566383053
+Reward gap : -0.00295677594752089, W : 1.7944495044882
+Reward gap : -0.0031199391840171092, W : 1.7937056555779853
+Reward gap : -0.003282818387645131, W : 1.7929954684997498
+Reward gap : -0.0029572615035888816, W : 1.7955809827042999
+Reward gap : -0.0032419801590879843, W : 1.7935329176068935
+Reward gap : -0.002947994164903489, W : 1.7945892986952752
+Reward gap : -0.0006431958038779773, W : 1.7813728529691848
+Reward gap : -0.0008048793988419262, W : 1.7814571791345435
+Reward gap : -0.0016800281958780916, W : 1.7738777389339961
+Reward gap : -0.0006020222691645732, W : 1.78205511276353
+Reward gap : -0.0006688917941256867, W : 1.7801050606134243
+Reward gap : -0.000832055030621906, W : 1.7793612117032094
+Reward gap : -0.0009949342342499279, W : 1.778651024624974
+Reward gap : -0.0006693773501936784, W : 1.7812365388295242
+Reward gap : -0.0009540960056927811, W : 1.7791884737321177
+Reward gap : -0.0006601100115082859, W : 1.7802448548204997
+Reward gap : -0.002536289784780321, W : 1.7944156901324757
+Reward gap : -0.00269797337974427, W : 1.7945000162978346
+Reward gap : -0.0035731221767804355, W : 1.786920576097287
+Reward gap : -0.002495116250066917, W : 1.795097949926821
+Reward gap : -0.0025619857750280306, W : 1.7931478977767155
+Reward gap : -0.00272514901152425, W : 1.7924040488665005
+Reward gap : -0.002888028215152272, W : 1.7916938617882652
+Reward gap : -0.0025624713310960223, W : 1.794279375992815
+Reward gap : -0.002847189986595125, W : 1.7922313108954087
+Reward gap : -0.00255320399241063, W : 1.7932876919837908
+Reward gap : -1.3705621824885994e-05, W : 1.7745476497256683
+Reward gap : -0.0001753892167888349, W : 1.7746319758910272
+Reward gap : -0.0010505380138250003, W : 1.7670525356904796
+Reward gap : 2.746791288851802e-05, W : 1.7752299095200135
+Reward gap : -3.9401612072595404e-05, W : 1.7732798573699082
+Reward gap : -0.00020256484856881474, W : 1.7725360084596933
+Reward gap : -0.0003654440521968366, W : 1.7718258213814582
+Reward gap : -3.9887168140587126e-05, W : 1.774411335586008
+Reward gap : -0.0003246058236396898, W : 1.7723632704886016
+Reward gap : -3.061982945519459e-05, W : 1.7734196515769833
+Reward gap : -0.0018553185075611683, W : 1.7869903455333211
+Reward gap : -0.0020170021025251172, W : 1.78707467169868
+Reward gap : -0.0028921508995612827, W : 1.7794952314981325
+Reward gap : -0.0018141449728477643, W : 1.7876726053276664
+Reward gap : -0.0018810144978088778, W : 1.785722553177561
+Reward gap : -0.002044177734305097, W : 1.784978704267346
+Reward gap : -0.002207056937933119, W : 1.7842685171891106
+Reward gap : -0.0018815000538768695, W : 1.7868540313936605
+Reward gap : -0.002166218709375972, W : 1.784805966296254
+Reward gap : -0.001872232715191477, W : 1.7858623473846362
+
+[Step 16-18] Most ambiguous arms:
+    b_(4): arm_39
+    s_(4): arm_20
+    B_3(s,b): 1.793510
+
+[Step 20] CASE arm selection (U_3 ∪ N_3)...
+    -> arm_23 [U_t] (50 traces, pull #1)
+
+[Step 21] Resetting LoRA adapter...
+
+[Step 21] SFT on 50 traces...
+Prepared 50 training examples; skipped 0 empty/invalid examples.
+Training iter 3 (50 samples, 3 epochs)...
+{'loss': 5.6075, 'grad_norm': 3.509582996368408, 'learning_rate': 0.0001, 'epoch': 1.48}
+{'train_runtime': 27.5045, 'train_samples_per_second': 5.454, 'train_steps_per_second': 0.654, 'train_loss': 4.239245944552952, 'epoch': 2.64}
+Saved to bandit_output/adapter_iter_3
+
+[Step 21] Evaluating 50 val samples...
+
+>>> EVALUATING 50 SAMPLES in 7 batches (bs=8) [Qwen HF] <<<
+
+Running inference on 8 samples...
+  Prompt tokens: 103, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 577.37500
+Sample latency = 8.57980
+  [1/50] CR=0.97, correct=True
+  [2/50] CR=1.85, correct=True
+  [3/50] CR=1.27, correct=False
+  [4/50] CR=1.40, correct=True
+  [5/50] CR=1.16, correct=True
+  [6/50] CR=0.89, correct=True
+  [7/50] CR=0.72, correct=True
+  [8/50] CR=7.39, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 200, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 707.62500
+Sample latency = 8.63713
+  [9/50] CR=1.21, correct=True
+  [10/50] CR=1.15, correct=True
+  [11/50] CR=0.96, correct=True
+  [12/50] CR=1.41, correct=True
+  [13/50] CR=1.09, correct=True
+  [14/50] CR=3.49, correct=False
+  [15/50] CR=0.51, correct=True
+  [16/50] CR=2.59, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 98, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 621.12500
+Sample latency = 8.62899
+  [17/50] CR=1.14, correct=True
+  [18/50] CR=1.05, correct=True
+  [19/50] CR=1.06, correct=True
+  [20/50] CR=0.93, correct=True
+  [21/50] CR=7.06, correct=False
+  [22/50] CR=0.71, correct=True
+  [23/50] CR=0.92, correct=True
+  [24/50] CR=1.46, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 73, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 485.62500
+Sample latency = 7.93230
+  [25/50] CR=1.91, correct=True
+  [26/50] CR=1.09, correct=True
+  [27/50] CR=1.01, correct=True
+  [28/50] CR=0.72, correct=True
+  [29/50] CR=4.08, correct=True
+  [30/50] CR=0.80, correct=False
+  [31/50] CR=0.93, correct=False
+  [32/50] CR=1.01, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 190, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 481.62500
+Sample latency = 8.71774
+  [33/50] CR=1.64, correct=True
+  [34/50] CR=3.30, correct=False
+  [35/50] CR=1.16, correct=True
+  [36/50] CR=1.23, correct=True
+  [37/50] CR=1.01, correct=True
+  [38/50] CR=1.01, correct=True
+  [39/50] CR=0.96, correct=False
+  [40/50] CR=0.87, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 161, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 504.12500
+Sample latency = 4.25942
+  [41/50] CR=0.63, correct=True
+  [42/50] CR=2.80, correct=True
+  [43/50] CR=0.77, correct=False
+  [44/50] CR=1.36, correct=True
+  [45/50] CR=1.29, correct=True
+  [46/50] CR=0.79, correct=True
+  [47/50] CR=2.08, correct=True
+  [48/50] CR=0.83, correct=True
+
+Running inference on 2 samples...
+  Prompt tokens: 62, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 50.00000
+Avg CoT Length = 261.00000
+Sample latency = 6.37435
+  [49/50] CR=0.65, correct=True
+  [50/50] CR=1.49, correct=False
+
+>>> Acc=82.00% (41/50), Avg_CR=1.5566 <<<
+
+Reward calculated : -0.22527779003193754
+
+[Step 22-23] arm_23: acc=0.8200, CR=1.5566, REWARD=-0.2253 (pulls: 1)
+    Weights: [-0.0241, -0.0236, -0.0368, -0.0413, -0.0434, -0.0141, -0.0074, -0.0024, -0.0286]
+
+############################################################
+# ITERATION 4/100
+############################################################
+
+[Step 8-13] Swap check (U_3 vs N_3)...
+Reward gap : 0.005065299186669064, W : 1.5170770052458893
+  Reward Gap: 0.0051 
+  Worst U_3: arm_39 (score=-0.1561)
+  Best  N_3: arm_9 (score=-0.1511)
+  >> SWAPPED: arm_39 -> N_(t-1)', arm_9 -> U_t
+
+[Step 14] M_4 sampled: {'arm_4', 'arm_28', 'arm_26', 'arm_30', 'arm_25', 'arm_34', 'arm_2', 'arm_46', 'arm_33', 'arm_10'} (10 arms from exploration pool)
+
+[Step 15] Reconstruct N_4...
+  >> N_t reconstructed: promoted ['arm_2', 'arm_30'] from M_t -> N_t
+  >> N_t reconstructed: demoted ['arm_39', 'arm_49'] from N_(t-1)' -> rest
+    Sets: U_4=10, N_4=10
+Reward gap : 0.001135290300406877, W : 1.5023759264554457
+Reward gap : 0.0012145965495578281, W : 1.4998389375301724
+Reward gap : 0.0013482488902324674, W : 1.5013284061414138
+Reward gap : 0.000930636893106157, W : 1.4992690315085064
+Reward gap : 0.001190397294181439, W : 1.4999511455644936
+Reward gap : 0.0009421234572564718, W : 1.499976988412117
+Reward gap : 0.0007991443243723084, W : 1.4988951990703383
+Reward gap : -0.0005451622806108003, W : 1.4956029579698271
+Reward gap : 0.0009650412720689783, W : 1.4981773537474752
+Reward gap : 0.0012439133903939803, W : 1.4996308316655251
+Reward gap : -0.0022649314537761533, W : 1.5175279812776168
+Reward gap : -0.0021856252046252023, W : 1.5149909923523437
+Reward gap : -0.002051972863950563, W : 1.516480460963585
+Reward gap : -0.0024695848610768734, W : 1.5144210863306775
+Reward gap : -0.0022098244600015915, W : 1.5151032003866647
+Reward gap : -0.0024580982969265586, W : 1.515129043234288
+Reward gap : -0.002601077429810722, W : 1.5140472538925092
+Reward gap : -0.003945384034793831, W : 1.510755012791998
+Reward gap : -0.002435180482114052, W : 1.5133294085696465
+Reward gap : -0.00215630836378905, W : 1.5147828864876962
+Reward gap : -0.0014382005737888504, W : 1.513226108412719
+Reward gap : -0.0013588943246378993, W : 1.5106891194874457
+Reward gap : -0.00122524198396326, W : 1.512178588098687
+Reward gap : -0.0016428539810895704, W : 1.5101192134657797
+Reward gap : -0.0013830935800142885, W : 1.5108013275217669
+Reward gap : -0.0016313674169392556, W : 1.5108271703693903
+Reward gap : -0.001774346549823419, W : 1.5097453810276111
+Reward gap : -0.0031186531548065277, W : 1.5064531399271004
+Reward gap : -0.0016084496021267491, W : 1.5090275357047487
+Reward gap : -0.0013295774838017471, W : 1.5104810136227982
+Reward gap : -0.0032331340815218435, W : 1.5218798206768895
+Reward gap : -0.0031538278323708924, W : 1.5193428317516158
+Reward gap : -0.003020175491696253, W : 1.5208323003628577
+Reward gap : -0.0034377874888225635, W : 1.5187729257299503
+Reward gap : -0.0031780270877472816, W : 1.5194550397859374
+Reward gap : -0.0034263009246722487, W : 1.5194808826335608
+Reward gap : -0.003569280057556412, W : 1.5183990932917817
+Reward gap : -0.004913586662539521, W : 1.5151068521912707
+Reward gap : -0.0034033831098597422, W : 1.5176812479689188
+Reward gap : -0.00312451099153474, W : 1.5191347258869685
+Reward gap : 0.0017107160387028475, W : 1.499579472061479
+Reward gap : 0.0017900222878537986, W : 1.4970424831362057
+Reward gap : 0.0019236746285284378, W : 1.4985319517474471
+Reward gap : 0.0015060626314021275, W : 1.4964725771145397
+Reward gap : 0.0017658230324774093, W : 1.497154691170527
+Reward gap : 0.0015175491955524423, W : 1.4971805340181503
+Reward gap : 0.0013745700626682789, W : 1.4960987446763712
+Reward gap : 3.0263457685170136e-05, W : 1.4928065035758604
+Reward gap : 0.0015404670103649487, W : 1.4953808993535087
+Reward gap : 0.0018193391286899507, W : 1.4968343772715582
+Reward gap : -0.0035643040757505906, W : 1.5232309104650144
+Reward gap : -0.0034849978265996395, W : 1.5206939215397406
+Reward gap : -0.0033513454859250003, W : 1.5221833901509825
+Reward gap : -0.0037689574830513106, W : 1.520124015518075
+Reward gap : -0.0035091970819760288, W : 1.5208061295740622
+Reward gap : -0.003757470918900996, W : 1.5208319724216857
+Reward gap : -0.0039004500517851592, W : 1.5197501830799065
+Reward gap : -0.005244756656768268, W : 1.5164579419793955
+Reward gap : -0.0037345531040884894, W : 1.5190323377570436
+Reward gap : -0.0034556809857634874, W : 1.5204858156750933
+Reward gap : -0.0011311566437342824, W : 1.513255681632781
+Reward gap : -0.0010518503945833313, W : 1.5107186927075074
+Reward gap : -0.000918198053908692, W : 1.512208161318749
+Reward gap : -0.0013358100510350024, W : 1.5101487866858416
+Reward gap : -0.0010760496499597205, W : 1.5108309007418288
+Reward gap : -0.0013243234868846876, W : 1.5108567435894522
+Reward gap : -0.001467302619768851, W : 1.509774954247673
+Reward gap : -0.0028116092247519597, W : 1.5064827131471623
+Reward gap : -0.0013014056720721812, W : 1.5090571089248106
+Reward gap : -0.0010225335537471791, W : 1.51051058684286
+Reward gap : -0.0035013771283623207, W : 1.523905052305723
+Reward gap : -0.0034220708792113697, W : 1.5213680633804492
+Reward gap : -0.0032884185385367304, W : 1.522857531991691
+Reward gap : -0.0037060305356630407, W : 1.5207981573587837
+Reward gap : -0.003446270134587759, W : 1.5214802714147708
+Reward gap : -0.003694543971512726, W : 1.5215061142623942
+Reward gap : -0.0038375231043968894, W : 1.5204243249206153
+Reward gap : -0.005181829709379998, W : 1.5171320838201043
+Reward gap : -0.0036716261567002195, W : 1.5197064795977524
+Reward gap : -0.0033927540383752175, W : 1.5211599575158021
+Reward gap : -0.00024072689667209435, W : 1.5078067425376422
+Reward gap : -0.00016142064752114327, W : 1.5052697536123691
+Reward gap : -2.7768306846504e-05, W : 1.5067592222236104
+Reward gap : -0.00044538030397281436, W : 1.5046998475907032
+Reward gap : -0.0001856199028975325, W : 1.5053819616466904
+Reward gap : -0.00043389373982249957, W : 1.5054078044943138
+Reward gap : -0.000576872872706663, W : 1.5043260151525348
+Reward gap : -0.0019211794776897717, W : 1.5010337740520237
+Reward gap : -0.00041097592500999314, W : 1.503608169829672
+Reward gap : -0.0001321038066849911, W : 1.5050616477477219
+Reward gap : -0.002355975590279724, W : 1.5199605975397383
+Reward gap : -0.002276669341128773, W : 1.5174236086144652
+Reward gap : -0.002143017000454134, W : 1.5189130772257065
+Reward gap : -0.002560628997580444, W : 1.516853702592799
+Reward gap : -0.0023008685965051623, W : 1.5175358166487862
+Reward gap : -0.0025491424334301294, W : 1.5175616594964096
+Reward gap : -0.0026921215663142928, W : 1.5164798701546307
+Reward gap : -0.0040364281712974015, W : 1.5131876290541195
+Reward gap : -0.002526224618617623, W : 1.515762024831768
+Reward gap : -0.002247352500292621, W : 1.5172155027498178
+
+[Step 16-18] Most ambiguous arms:
+    b_(5): arm_23
+    s_(5): arm_14
+    B_4(s,b): 1.520404
+
+[Step 20] CASE arm selection (U_4 ∪ N_4)...
+    -> arm_23 [U_t] (50 traces, pull #2)
+
+[Step 21] Resetting LoRA adapter...
+
+[Step 21] SFT on 50 traces...
+Prepared 50 training examples; skipped 0 empty/invalid examples.
+Training iter 4 (50 samples, 3 epochs)...
+{'loss': 5.6018, 'grad_norm': 3.538954019546509, 'learning_rate': 0.0001, 'epoch': 1.48}
+{'train_runtime': 24.6995, 'train_samples_per_second': 6.073, 'train_steps_per_second': 0.729, 'train_loss': 4.236052089267307, 'epoch': 2.64}
+Saved to bandit_output/adapter_iter_4
+
+[Step 21] Evaluating 50 val samples...
+
+>>> EVALUATING 50 SAMPLES in 7 batches (bs=8) [Qwen HF] <<<
+
+Running inference on 8 samples...
+  Prompt tokens: 103, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 565.75000
+Sample latency = 8.52265
+  [1/50] CR=0.97, correct=True
+  [2/50] CR=1.85, correct=True
+  [3/50] CR=1.13, correct=True
+  [4/50] CR=1.40, correct=True
+  [5/50] CR=1.12, correct=True
+  [6/50] CR=0.78, correct=True
+  [7/50] CR=0.72, correct=True
+  [8/50] CR=7.39, correct=False
+
+Running inference on 8 samples...
+  Prompt tokens: 200, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 75.00000
+Avg CoT Length = 680.50000
+Sample latency = 8.91261
+  [9/50] CR=1.06, correct=False
+  [10/50] CR=1.16, correct=True
+  [11/50] CR=0.96, correct=True
+  [12/50] CR=1.41, correct=True
+  [13/50] CR=1.08, correct=True
+  [14/50] CR=3.49, correct=False
+  [15/50] CR=0.51, correct=True
+  [16/50] CR=2.19, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 98, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 100.00000
+Avg CoT Length = 471.50000
+Sample latency = 4.02495
+  [17/50] CR=1.14, correct=True
+  [18/50] CR=1.15, correct=True
+  [19/50] CR=1.29, correct=True
+  [20/50] CR=0.92, correct=True
+  [21/50] CR=2.16, correct=True
+  [22/50] CR=0.96, correct=True
+  [23/50] CR=0.78, correct=True
+  [24/50] CR=1.35, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 73, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 62.50000
+Avg CoT Length = 257.87500
+Sample latency = 1.72777
+  [25/50] CR=1.91, correct=True
+  [26/50] CR=1.34, correct=True
+  [27/50] CR=1.01, correct=True
+  [28/50] CR=0.72, correct=True
+  [29/50] CR=0.86, correct=False
+  [30/50] CR=0.76, correct=False
+  [31/50] CR=0.22, correct=False
+  [32/50] CR=0.85, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 190, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 275.37500
+Sample latency = 2.92213
+  [33/50] CR=1.78, correct=True
+  [34/50] CR=0.68, correct=True
+  [35/50] CR=1.04, correct=True
+  [36/50] CR=1.23, correct=True
+  [37/50] CR=1.01, correct=True
+  [38/50] CR=0.94, correct=True
+  [39/50] CR=0.96, correct=False
+  [40/50] CR=0.87, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 161, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 671.62500
+Sample latency = 8.69824
+  [41/50] CR=0.63, correct=True
+  [42/50] CR=2.80, correct=True
+  [43/50] CR=2.43, correct=False
+  [44/50] CR=1.36, correct=True
+  [45/50] CR=1.56, correct=True
+  [46/50] CR=0.99, correct=True
+  [47/50] CR=1.59, correct=True
+  [48/50] CR=0.83, correct=True
+
+Running inference on 2 samples...
+  Prompt tokens: 62, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 50.00000
+Avg CoT Length = 261.00000
+Sample latency = 6.66127
+  [49/50] CR=0.65, correct=True
+  [50/50] CR=1.49, correct=False
+
+>>> Acc=82.00% (41/50), Avg_CR=1.3496 <<<
+
+Reward calculated : -0.12178668923670127
+
+[Step 22-23] arm_23: acc=0.8200, CR=1.3496, REWARD=-0.1218 (pulls: 2)
+    Weights: [-0.0235, -0.0222, -0.0347, -0.0390, -0.0410, -0.0137, -0.0071, -0.0022, -0.0273]
+
+############################################################
+# ITERATION 5/100
+############################################################
+
+[Step 8-13] Swap check (U_4 vs N_4)...
+Reward gap : 0.004943400798862463, W : 1.3462497541041536
+  Reward Gap: 0.0049 
+  Worst U_4: arm_48 (score=-0.1479)
+  Best  N_4: arm_2 (score=-0.1429)
+  >> SWAPPED: arm_48 -> N_(t-1)', arm_2 -> U_t
+
+[Step 14] M_5 sampled: {'arm_44', 'arm_28', 'arm_25', 'arm_41', 'arm_1', 'arm_49', 'arm_8', 'arm_3', 'arm_46', 'arm_6'} (10 arms from exploration pool)
+
+[Step 15] Reconstruct N_5...
+  >> N_t reconstructed: promoted ['arm_49'] from M_t -> N_t
+  >> N_t reconstructed: demoted ['arm_48'] from N_(t-1)' -> rest
+    Sets: U_5=10, N_5=10
+Reward gap : 0.0011097761618668323, W : 1.3341572202297556
+Reward gap : 0.001126632646383574, W : 1.3296144348923307
+Reward gap : 0.001278218608391113, W : 1.3318002003268432
+Reward gap : 0.0008933441202453041, W : 1.330274563314341
+Reward gap : 0.0011439439902859727, W : 1.3308235772808799
+Reward gap : 0.0009177255776590121, W : 1.331423877533112
+Reward gap : 0.000769589551807226, W : 1.3300440405884189
+Reward gap : 0.0012790777205340942, W : 1.3288575042967725
+Reward gap : 0.0009030789681065132, W : 1.3283741516847292
+Reward gap : 0.001185867693452386, W : 1.3301533728484738
+Reward gap : -0.0021026306634437664, W : 1.3467547303792564
+Reward gap : -0.0020857741789270245, W : 1.3422119450418315
+Reward gap : -0.0019341882169194857, W : 1.3443977104763443
+Reward gap : -0.0023190627050652945, W : 1.3428720734638417
+Reward gap : -0.002068462835024626, W : 1.3434210874303805
+Reward gap : -0.0022946812476515865, W : 1.3440213876826128
+Reward gap : -0.0024428172735033726, W : 1.3426415507379195
+Reward gap : -0.0019333291047765044, W : 1.3414550144462731
+Reward gap : -0.0023093278572040854, W : 1.34097166183423
+Reward gap : -0.0020265391318582127, W : 1.3427508829979746
+Reward gap : -0.001312428658570064, W : 1.3427402092301717
+Reward gap : -0.0012955721740533221, W : 1.3381974238927468
+Reward gap : -0.0011439862120457833, W : 1.3403831893272595
+Reward gap : -0.0015288607001915921, W : 1.338857552314757
+Reward gap : -0.0012782608301509235, W : 1.3394065662812957
+Reward gap : -0.0015044792427778841, W : 1.340006866533528
+Reward gap : -0.0016526152686296702, W : 1.3386270295888347
+Reward gap : -0.001143127099902802, W : 1.3374404932971886
+Reward gap : -0.001519125852330383, W : 1.336957140685145
+Reward gap : -0.0012363371269845103, W : 1.3387363618488899
+Reward gap : -0.0030111357590484333, W : 1.3502215257936951
+Reward gap : -0.0029942792745316915, W : 1.3456787404562702
+Reward gap : -0.0028426933125241527, W : 1.347864505890783
+Reward gap : -0.0032275678006699615, W : 1.3463388688782805
+Reward gap : -0.002976967930629293, W : 1.3468878828448194
+Reward gap : -0.0032031863432562535, W : 1.3474881830970515
+Reward gap : -0.0033513223691080396, W : 1.3461083461523584
+Reward gap : -0.0028418342003811714, W : 1.3449218098607123
+Reward gap : -0.0032178329528087524, W : 1.3444384572486687
+Reward gap : -0.0029350442274628796, W : 1.3462176784124136
+Reward gap : 0.0016538826252174565, W : 1.3317449767512428
+Reward gap : 0.0016707391097341984, W : 1.327202191413818
+Reward gap : 0.0018223250717417372, W : 1.3293879568483307
+Reward gap : 0.0014374505835959284, W : 1.3278623198358281
+Reward gap : 0.001688050453636597, W : 1.328411333802367
+Reward gap : 0.0014618320410096364, W : 1.3290116340545992
+Reward gap : 0.0013136960151578503, W : 1.327631797109906
+Reward gap : 0.0018231841838847185, W : 1.32644526081826
+Reward gap : 0.0014471854314571375, W : 1.3259619082062164
+Reward gap : 0.0017299741568030103, W : 1.3277411293699612
+Reward gap : -0.0010047072161511461, W : 1.3427566618085212
+Reward gap : -0.0009878507316344043, W : 1.3382138764710965
+Reward gap : -0.0008362647696268655, W : 1.340399641905609
+Reward gap : -0.0012211392577726743, W : 1.3388740048931067
+Reward gap : -0.0009705393877320057, W : 1.3394230188596457
+Reward gap : -0.0011967578003589663, W : 1.3400233191118778
+Reward gap : -0.0013448938262107524, W : 1.3386434821671844
+Reward gap : -0.0008354056574838842, W : 1.3374569458755383
+Reward gap : -0.0012114044099114651, W : 1.336973593263495
+Reward gap : -0.0009286156845655924, W : 1.3387528144272396
+Reward gap : -0.003251285983625063, W : 1.3518264064610297
+Reward gap : -0.003234429499108321, W : 1.3472836211236048
+Reward gap : -0.0030828435371007823, W : 1.3494693865581175
+Reward gap : -0.003467718025246591, W : 1.3479437495456152
+Reward gap : -0.0032171181552059225, W : 1.348492763512154
+Reward gap : -0.003443336567832883, W : 1.3490930637643863
+Reward gap : -0.003591472593684669, W : 1.347713226819693
+Reward gap : -0.003081984424957801, W : 1.3465266905280466
+Reward gap : -0.003457983177385382, W : 1.3460433379160035
+Reward gap : -0.0031751944520395092, W : 1.3478225590797481
+Reward gap : -0.00018189693804837592, W : 1.3382293374677794
+Reward gap : -0.0001650404535316341, W : 1.3336865521303545
+Reward gap : -1.345449152409528e-05, W : 1.3358723175648672
+Reward gap : -0.0003983289796699041, W : 1.3343466805523647
+Reward gap : -0.00014772910962923547, W : 1.3348956945189037
+Reward gap : -0.0003739475222561961, W : 1.3354959947711358
+Reward gap : -0.0005220835481079822, W : 1.3341161578264427
+Reward gap : -1.2595379381113991e-05, W : 1.3329296215347965
+Reward gap : -0.00038859413180869495, W : 1.332446268922753
+Reward gap : -0.00010580540646282222, W : 1.3342254900864978
+Reward gap : 0.0015968133350391933, W : 1.3371200779066783
+Reward gap : 0.0016136698195559351, W : 1.3325772925692534
+Reward gap : 0.001765255781563474, W : 1.3347630580037662
+Reward gap : 0.0013803812934176651, W : 1.3332374209912636
+Reward gap : 0.0016309811634583338, W : 1.3337864349578024
+Reward gap : 0.0014047627508313731, W : 1.3343867352100347
+Reward gap : 0.001256626724979587, W : 1.3330068982653416
+Reward gap : 0.0017661148937064552, W : 1.3318203619736952
+Reward gap : 0.0013901161412788743, W : 1.331337009361652
+Reward gap : 0.001672904866624747, W : 1.3331162305253967
+Reward gap : -0.0022262361786770934, W : 1.3504068795944784
+Reward gap : -0.0022093796941603516, W : 1.3458640942570537
+Reward gap : -0.002057793732152813, W : 1.3480498596915662
+Reward gap : -0.0024426682202986216, W : 1.3465242226790637
+Reward gap : -0.002192068350257953, W : 1.3470732366456026
+Reward gap : -0.0024182867628849136, W : 1.347673536897835
+Reward gap : -0.0025664227887366997, W : 1.3462936999531416
+Reward gap : -0.0020569346200098315, W : 1.3451071636614955
+Reward gap : -0.0024329333724374125, W : 1.3446238110494522
+Reward gap : -0.0021501446470915397, W : 1.3464030322131968
+
+[Step 16-18] Most ambiguous arms:
+    b_(6): arm_23
+    s_(6): arm_14
+    B_5(s,b): 1.348575
+
+[Step 20] CASE arm selection (U_5 ∪ N_5)...
+    -> arm_23 [U_t] (50 traces, pull #3)
+
+[Step 21] Resetting LoRA adapter...
+
+[Step 21] SFT on 50 traces...
+Prepared 50 training examples; skipped 0 empty/invalid examples.
+Training iter 5 (50 samples, 3 epochs)...
+{'loss': 5.6036, 'grad_norm': 3.5253841876983643, 'learning_rate': 0.0001, 'epoch': 1.48}
+{'train_runtime': 25.5026, 'train_samples_per_second': 5.882, 'train_steps_per_second': 0.706, 'train_loss': 4.2367832395765515, 'epoch': 2.64}
+Saved to bandit_output/adapter_iter_5
+
+[Step 21] Evaluating 50 val samples...
+
+>>> EVALUATING 50 SAMPLES in 7 batches (bs=8) [Qwen HF] <<<
+
+Running inference on 8 samples...
+  Prompt tokens: 103, EOS id: 151645, pad id: 151643
+
+Evaluating predictions...
+
+Calculating accuracy...
+Accuracy = 87.50000
+Avg CoT Length = 797.00000
+Sample latency = 8.58432
+  [1/50] CR=0.97, correct=True
+  [2/50] CR=1.85, correct=True
+  [3/50] CR=1.63, correct=True
+  [4/50] CR=1.48, correct=True
+  [5/50] CR=1.22, correct=True
+  [6/50] CR=4.58, correct=False
+  [7/50] CR=0.72, correct=True
+  [8/50] CR=7.39, correct=True
+
+Running inference on 8 samples...
+  Prompt tokens: 200, EOS id: 151645, pad id: 151643
