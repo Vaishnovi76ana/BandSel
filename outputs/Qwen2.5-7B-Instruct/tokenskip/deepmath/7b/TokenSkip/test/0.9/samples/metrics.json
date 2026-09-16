@@ -1,0 +1,6 @@
+{
+    "n_samples": 500,
+    "accuracy": 0.518,
+    "avg_cot_length": 876.618,
+    "sample_latency": 0.25006459712982176
+}
