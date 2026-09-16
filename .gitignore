@@ -1,2 +1,3 @@
 model/datasets/deepmath/train.jsonl
 adapter_iter*/
+outputs/Qwen2.5-7B-Instruct/tokenskip/deepmath/7b/Original/rain/test_data/test.jsonl
